@@ -88,6 +88,12 @@ body {
     cursor: pointer;
     border-width: 0;
 }
+.button-primary:hover{
+    background: #ebebeb;
+}
+.button-primary:active{ 
+  box-shadow: 0 0 2px 2px var(--secondary-color);
+}
 
 .button-primary .button-inner-text {
     color: rgba(71, 119, 237, 1);
