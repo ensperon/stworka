@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checklist-wrapper div,
+.checklist-wrapper {
+    display: flex;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    justify-content: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    --XS-size: 12px;
+    --XS-height: 18px;
+    --S-size: 14px;
+    --S-height: 20px;
+    --L-size: 15px;
+    --L-height: 20px;
+    --XL-size: 20px;
+    --XL-height: 30px;
+    --main-color: rgba(53, 121, 245, 1);
+    --secondary-color: rgba(35, 100, 219, 1);
+    color: white;
+}
+
+.checklist-wrapper {
+    width: 743px;
+    max-height: 91px;
+    background: var(--main-color);
+    border-radius: 10px;
+    padding: 12px 18px 15px 22px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checklist-wrapper .content {
+    gap: 16px;
+    height: 100%;
+}
+
+.progress {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-items: center;
+    align-self: center;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1px;
+    box-sizing: content-box !important;
+    position: relative;
+}
+
+.progress .inner {
+    width: 59px;
+    height: 59px;
+    background: rgba(53, 121, 245, 1);
+    border-radius: 50%;
+    align-items: center;
+}
+
+.progress .inner::after {
+    counter-set: steps-passed var(--steps-passed);
+    counter-reset: steps-total var(--steps-total);
+    content: counter(steps-passed)'/' counter(steps-total);
+    font-size: var(--XL-size);
+    line-height: var(--XL-height);
+    color: white;
+}
+
+.checklist-wrapper .button-wrapper {
+    display: block;
+}
+
+.button-primary {
+    background: rgb(244, 248, 255);
+    border-radius: 6px;
+    padding: 10px 30px 10px 30px;
+    min-width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-width: 0;
+}
+
+.button-primary .button-inner-text {
+    color: rgba(71, 119, 237, 1);
+    font-size: var(--S-size);
+    line-height: var(--S-height);
+}
+
+.content .text-part {
+    flex-direction: column;
+    -ms-flex-direction: column;
+    gap: 4px;
+}
+
+.content .tag {
+    background: var(--secondary-color);
+    padding: 0px 10px 0px 10px;
+    border-radius: 40px;
+    font-size: var(--XS-size);
+    color: white;
+    line-height: var(--XS-height);
+    min-width: 76px;
+    height: 18px;
+    width: fit-content;
+}
+
+.checklist-title {
+    font-weight: 600;
+    font-size: var(--L-size);
+    line-height: var(--L-height);
+}
+
+.steps-passed::after {
+    counter-reset: steps-passed var(--steps-passed);
+    content: counter(steps-passed);
+}
+
+.steps-total::after {
+    counter-reset: steps-total var(--steps-total);
+    content: counter(steps-total);
+}
+
+.checklist-text {
+    font-size: var(--XS-size);
+    line-height: var(--XS-height);
+}
+
+circle {
+    fill: none;
+    stroke: white;
+    stroke-width: 2px;
+    stroke-dasharray: 191;
+    stroke-dashoffset: calc(188 - (188*(1/var(--steps-total)) * var(--steps-passed)));
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}

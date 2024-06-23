@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checklist</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="checklist-wrapper">
+            <div class="content">
+                <div class="progress">
+                    <div class="inner"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="62px" height="62px">
+                        <circle cx="31" cy="31" r="30" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="text-part">
+                    <div class="tag">Чеклист</div>
+                    <span class="checklist-title">
+                        Выполнено 
+                        <span class="steps-passed"></span> 
+                        из 
+                        <span class="steps-total"></span> 
+                        действий
+                    </span>
+                    <span class="checklist-text">Следующее действие: Созвониться с клиентом до 23.05.24 12:00</span>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="button-primary">
+                    <span class="button-inner-text">Открыть чеклист</span>
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<style>
+    .progress,
+    .checklist-title,
+    .checklist-text {
+        --steps-total: 7;
+        --steps-passed: 4;
+    }
+</style>
