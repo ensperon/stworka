@@ -44,7 +44,7 @@ body {
     height: 100%;
 }
 
-.progress {
+.checklist-wrapper .progress {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -52,7 +52,7 @@ body {
     align-self: center;
     background: rgba(255, 255, 255, 0.5);
     padding: 1px;
-    box-sizing: content-box !important;
+    box-sizing: content-box;
     position: relative;
 }
 
